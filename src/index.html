@@ -8,22 +8,27 @@
   </head>
   <body>
     <header>
-      <nav>
-        <div class="logo">
-          <h1>GT-Logo</h1>
-        </div>
-        <div class="menus">
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <section class="heroContent">
+      <div class="full-nav">
+        <nav class="flex navBar">
+          <div class="logo">
+            <h1>GT-Logo</h1>
+          </div>
+          <div class="menus">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="hamburger" id="ham">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+      <div class="heroContent flex">
         <div class="contentBox">
-          <h1>I'm <span class="title">Govinda Timsina</span></h1>
+          <h1>I'm <span>Govinda Timsina</span></h1>
           <h3>Frontend Developer</h3>
           <p>
             Hi there from an aspiring web developer. I blend fresh insights with
@@ -31,14 +36,20 @@
             learn, and grow in the real-world landscape.
           </p>
           <div class="buttonBox">
-            <button>Hire Me</button>
-            <button>Download Resume</button>
+            <button class="button">Hire Me</button>
+            <button class="button">Download Resume</button>
           </div>
         </div>
-        <div class="imageBox">
+        <div class="imageBox flex">
           <img class="heroImage" src="../images/hero.jpg" alt="" />
         </div>
-      </section>
+      </div>
     </header>
+
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9660dfe852.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
