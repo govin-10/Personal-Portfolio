@@ -115,6 +115,74 @@ header {
   border-radius: 50%;
 }
 
+/* Contact */
+
+.formSection {
+  height: 100vh;
+}
+.half-color {
+  height: 50%;
+  background-color: #5438dc;
+  padding: 1rem;
+}
+.half-width {
+  width: 90%;
+  margin: 0 auto;
+}
+.formContent {
+  color: white;
+  margin: 3rem 0;
+}
+.contact-title {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
+.formBox {
+  margin: 1rem auto;
+  background-color: white;
+  padding: 1rem;
+  width: 70%;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.75);
+}
+.mainForm {
+  width: 50%;
+}
+.mainForm > form > div {
+  margin-bottom: 0.8rem;
+}
+input {
+  height: 2rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  font-family: inherit;
+  color: #807e88;
+}
+textarea {
+  width: 100%;
+  height: 180px;
+  max-width: 100%;
+  max-height: 200px;
+}
+.icons {
+  padding: 0.1rem;
+  color: green;
+}
+.default-hide {
+  display: none;
+}
+.errorMessage {
+  color: red;
+  font-size: 0.7rem;
+}
+form > button {
+  background-color: #5438dc;
+  color: white;
+}
 @media screen and (max-width: 768px) {
   .hamburger {
     display: inline-block;
@@ -146,6 +214,7 @@ header {
     background-color: #5338dcb9;
     height: 100%;
     transition: 0.7s ease-in-out;
+    z-index: 999;
   }
   .menu-active {
     display: block;
@@ -176,5 +245,13 @@ header {
   }
   .no-transition {
     transition: none;
+  }
+
+  .formBox {
+    flex-direction: column;
+    width: 90%;
+  }
+  .mainForm {
+    width: 100%;
   }
 }
