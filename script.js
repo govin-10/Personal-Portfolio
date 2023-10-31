@@ -31,7 +31,7 @@ let emailError = document.getElementById("emailError");
 let messageError = document.getElementById("messageError");
 
 const validIcon = document.getElementById("validNameIcon");
-const emailValidIcon = document.getElementById("email-validIcon");
+const emailValidIcon = document.getElementById("emailValidIcon");
 
 function validateName() {
   if (fullName.value.length == 0) {
@@ -76,3 +76,20 @@ function validateMessage() {
     return true;
   }
 }
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => alert("Thank you for your submission"))
+    .catch((error) => alert(error));
+};
+
+document.querySelector("form").addEventListener("submit", handleSubmit);
