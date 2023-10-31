@@ -4,10 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
-  max-width: 1700px;
-  margin: 0 auto;
   font-family: "Poppins", sans-serif;
 }
 
@@ -27,8 +26,8 @@ body {
 
 /* HEader */
 header {
-  height: 100vh;
-  min-height: fit-content;
+  min-height: 100vh;
+  margin-bottom: 0;
 }
 .full-nav {
   box-shadow: 0px 6px 10px -6px rgba(84, 56, 220, 0.81);
@@ -40,7 +39,6 @@ header {
   margin: 0 auto;
   justify-content: space-between;
   padding: 1rem;
-  height: 10vh;
 }
 .closeButton {
   display: none;
@@ -75,9 +73,9 @@ header {
 
 .heroContent {
   width: 90%;
-  margin: 0 auto;
-  height: 87vh;
+  margin: 2rem auto;
   justify-content: space-around;
+  padding: 1rem 0;
 }
 .contentBox {
   width: 50%;
@@ -114,33 +112,36 @@ header {
   width: 280px;
   border-radius: 50%;
 }
+button > a {
+  text-decoration: none;
+  color: white;
+}
 
 /* Contact */
 
 .formSection {
-  height: 100vh;
+  height: fit-content;
 }
 .half-color {
   height: 50%;
-  background-color: #5438dc;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 .half-width {
   width: 90%;
   margin: 0 auto;
 }
 .formContent {
-  color: white;
-  margin: 3rem 0;
+  color: black;
+}
+.formContent > p {
+  margin-top: 1rem;
 }
 .contact-title {
   font-size: 2rem;
   margin-top: 1rem;
-  color: white;
 }
 .formBox {
   margin: 1rem auto;
-  background-color: white;
   padding: 2rem;
   min-width: 70%;
   height: 100%;
@@ -228,6 +229,57 @@ form > button {
 .fa-github {
   color: #000000;
 }
+
+.projectSection {
+  height: 100vh;
+  padding: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.projectBox {
+  height: 100%;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-image: linear-gradient(
+    to bottom,
+    #5438dc,
+    #4535cb,
+    #3732ba,
+    #2a2fa8,
+    #1d2b97
+  );
+  color: rgb(177, 177, 177);
+}
+footer > .width-90 {
+  width: 90%;
+  margin: 0 auto;
+}
+.links {
+  margin: 1rem 0;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.column {
+  display: flex;
+  margin: 1rem 0;
+}
+.column > a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+footer p {
+  text-align: center;
+
+  padding: 0.5rem;
+}
 @media screen and (max-width: 768px) {
   .hamburger {
     display: inline-block;
@@ -235,9 +287,7 @@ form > button {
   .heroContent {
     width: 100%;
     flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    padding: 1rem;
   }
   .contentBox {
     width: 100%;
@@ -249,7 +299,7 @@ form > button {
     font-size: 1.2rem;
   }
   .contentBox > p {
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
     font-size: 1rem;
   }
   .menus {
@@ -304,5 +354,9 @@ form > button {
   }
   .socialBox {
     width: 100%;
+  }
+  .row,
+  .column {
+    flex-direction: column;
   }
 }

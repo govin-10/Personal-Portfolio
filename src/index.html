@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header id="home">
       <div class="full-nav">
         <nav class="flex navBar">
           <div class="logo">
@@ -18,9 +18,9 @@
               <i class="fa-solid fa-rectangle-xmark"></i>
             </div>
             <ul>
-              <li><a href="#">Home</a></li>
+              <li><a href="#home">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Projects</a></li>
+              <li><a href="#projects">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -39,7 +39,7 @@
             learn, and grow in the real-world landscape.
           </p>
           <div class="buttonBox">
-            <button class="button">Hire Me</button>
+            <button class="button"><a href="#contact">Hire Me</a></button>
             <button class="button">Download Resume</button>
           </div>
         </div>
@@ -49,11 +49,20 @@
       </div>
     </header>
 
+    <section class="projectSection" id="projects">
+      <h1>Projects</h1>
+      <hr style="height: 0.2rem; background-color: #5438dc" />
+      <div class="flex projectBox">
+        <h1>Updating Soon...</h1>
+      </div>
+    </section>
+
     <section class="formSection" id="contact">
       <div class="half-color">
         <div class="half-width">
           <div class="formContent">
             <h1 class="contact-title">Contact Me</h1>
+            <hr style="height: 0.2rem; background-color: #5438dc" />
             <p>
               Kindly fill out the form below if you have anything to say to me
               or go through my social links
@@ -146,6 +155,39 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="width-90">
+        <div class="links">
+          <h2>Quick Links</h2>
+          <div class="row">
+            <div class="column">
+              <a href="#home">Go to Top</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <div class="column">
+              <a href="#projects">Github</a>
+              <a href="#contact">LinkedIn</a>
+              <a href="#contact">Twitter</a>
+              <a href="#projects">Instagram</a>
+              <a href="#home">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>&copy; All Rights Reserved, Govinda Timsina, 2023</p>
+      <p>
+        Made with
+        <span
+          ><i
+            class="fa-solid fa-heart"
+            style="color: red; font-size: 1.2rem"
+          ></i
+        ></span>
+      </p>
+    </footer>
+
     <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/9660dfe852.js"
