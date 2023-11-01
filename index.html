@@ -78,7 +78,9 @@
       <div class="full-nav">
         <nav class="flex navBar">
           <div class="logo">
-            <h1>GT-Logo</h1>
+            <a href="">
+              <img src="./images/govindaLogo.png" alt="" />
+            </a>
           </div>
           <div class="menus">
             <div class="closeButton" id="closeButton">
@@ -106,8 +108,10 @@
             learn, and grow in the real-world landscape.
           </p>
           <div class="buttonBox">
-            <button class="button"><a href="#contact">Hire Me</a></button>
-            <button class="button">Download Resume</button>
+            <a href="#contact"><button class="button">Hire Me</button> </a>
+            <a href="./resource/Resume.pdf" download
+              ><button class="button">Download Resume</button></a
+            >
           </div>
         </div>
         <div class="imageBox flex">
@@ -188,10 +192,14 @@
                     name="Message"
                     id="Message"
                     onkeyup="validateMessage()"
+                    placeholder="Your Message here..."
                   ></textarea>
                   <p id="messageError" class="errorMessage"></p>
                 </div>
-                <button type="submit" class="button">Send</button>
+                <div class="submitBox">
+                  <button type="submit" class="button" onsubmit="">Send</button>
+                  <p id="submitError" class="errorMessage"></p>
+                </div>
               </form>
             </div>
             <div class="socialBox">
@@ -201,17 +209,27 @@
                   <div class="socialIcons">
                     <ul class="flex">
                       <li class="flex">
-                        <a href="">
+                        <a
+                          href="https://twitter.com/GovindaTimsina7"
+                          target="_blank"
+                        >
                           <i class="fa-brands fa-twitter"></i>
                         </a>
                       </li>
                       <li class="flex">
-                        <a href="">
+                        <a
+                          href="https://www.linkedin.com/in/govindatimsina/"
+                          target="_blank"
+                        >
                           <i class="fa-brands fa-linkedin"></i>
                         </a>
                       </li>
                       <li class="flex">
-                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a
+                          href="https://github.com/govindatimsina"
+                          target="_blank"
+                          ><i class="fa-brands fa-github"></i
+                        ></a>
                       </li>
                     </ul>
                   </div>
@@ -234,11 +252,24 @@
               <a href="#contact">Contact</a>
             </div>
             <div class="column">
-              <a href="#projects">Github</a>
-              <a href="#contact">LinkedIn</a>
-              <a href="#contact">Twitter</a>
-              <a href="#projects">Instagram</a>
-              <a href="#home">Facebook</a>
+              <a href="https://github.com/govindatimsina" target="_blank">
+                Github
+              </a>
+              <a
+                href="https://www.linkedin.com/in/govindatimsina/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+              <a href="https://twitter.com/GovindaTimsina7" target="_blank">
+                Twitter
+              </a>
+              <a href="https://instagram.com/govin.17" target="_blank">
+                Instagram
+              </a>
+              <a href="https://facebook.com/govinda.timsina.925" target="_blank"
+                >Facebook
+              </a>
             </div>
           </div>
         </div>

@@ -29,6 +29,7 @@ const message = document.getElementById("Message");
 let nameError = document.getElementById("nameError");
 let emailError = document.getElementById("emailError");
 let messageError = document.getElementById("messageError");
+let submitError = document.getElementById("submitError");
 
 const validIcon = document.getElementById("validNameIcon");
 const emailValidIcon = document.getElementById("emailValidIcon");
@@ -77,19 +78,38 @@ function validateMessage() {
   }
 }
 
+function validateForm() {
+  if (!validateName() || !validateEmail() || !validateMessage()) {
+    submitError.innerHTML = `Cannot submit form. Please fix the error.`;
+    setTimeout(() => {
+      submitError.innerHTML = "";
+    }, 2000);
+    return false;
+  } else return true;
+}
+
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  const myForm = event.target;
-  const formData = new FormData(myForm);
+  if (!validateForm()) {
+    return;
+  } else {
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => alert("Thank you for your submission"))
-    .catch((error) => alert(error));
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        alert("Thank you for your submission");
+        myForm.reset();
+        validIcon.classList.add("default-hide");
+        emailValidIcon.classList.add("default-hide");
+      })
+      .catch((error) => alert(error));
+  }
 };
 
 document.querySelector("form").addEventListener("submit", handleSubmit);
