@@ -1,0 +1,46 @@
+{
+  "name": "govinda-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "predev": "npm run clean:appledouble",
+    "build": "next build",
+    "prebuild": "npm run clean:appledouble",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "clean:appledouble": "find .next -name '._*' -delete 2>/dev/null; true",
+    "sanity:deploy": "sanity deploy",
+    "sanity:typegen": "sanity schema extract && sanity typegen generate"
+  },
+  "dependencies": {
+    "@portabletext/react": "^8.0.1",
+    "@sanity/client": "^8.14.1",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^6.21.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.66.0",
+    "motion": "^14.9.0",
+    "next": "16.4.3",
+    "next-sanity": "^13.4.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "resend": "^6.37.0",
+    "sanity": "^6.21.0",
+    "styled-components": "^6.6.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

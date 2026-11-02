@@ -1,0 +1,52 @@
+name: CI
+
+# Runs on every push and PR. This is the "CI" half of CI/CD: it proves the
+# code is sound. Deployment ("CD") is handled by the host, which watches the
+# same branch.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Lets you trigger a run by hand from the Actions tab.
+  workflow_dispatch:
+
+# A newer push to the same branch cancels the older in-flight run.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint, typecheck, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          # Caches ~/.npm between runs, keyed on package-lock.json.
+          cache: npm
+
+      # `ci` (not `install`) installs exactly what the lockfile pins and fails
+      # if the lockfile is out of sync with package.json.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      # Secrets are optional on purpose: with no Sanity project id the content
+      # layer falls back to lib/content/local.ts, so forks and Dependabot PRs
+      # (which can't read secrets) still get a real build check.
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || 'https://govindatimsina.com.np' }}
