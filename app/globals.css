@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/*
+ * Bind `dark:` utilities to the `.dark` class that next-themes puts on <html>.
+ * Tailwind v4 defaults this variant to `prefers-color-scheme`, which would
+ * ignore the manual theme toggle and drift out of sync with the colour tokens
+ * below (which are class-scoped).
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ===========================================================================
    Design tokens
    The brand violet is carried over from the v1 site (#5438dc) and extended

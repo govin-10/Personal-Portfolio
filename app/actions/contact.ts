@@ -32,16 +32,7 @@ const ContactSchema = z.object({
   website: z.string().max(0).optional().or(z.literal("")),
 });
 
-export interface ContactState {
-  status: "idle" | "success" | "error";
-  message?: string;
-  /** Field-level errors, keyed by input name. */
-  errors?: Partial<Record<keyof z.infer<typeof ContactSchema>, string>>;
-  /** Echoed back so the form can repopulate after a failed submit. */
-  values?: Record<string, string>;
-}
-
-export const initialContactState: ContactState = { status: "idle" };
+import type { ContactState } from "@/lib/contact-state";
 
 /**
  * Best-effort in-memory rate limit. On serverless this is per-instance, so

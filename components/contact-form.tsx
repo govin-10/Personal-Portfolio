@@ -4,11 +4,11 @@ import { Check, LoaderCircle, Send } from "lucide-react";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 
+import { submitContactForm } from "@/app/actions/contact";
 import {
   initialContactState,
-  submitContactForm,
   type ContactState,
-} from "@/app/actions/contact";
+} from "@/lib/contact-state";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 

@@ -53,7 +53,8 @@ export function SiteHeader() {
             alt=""
             width={133}
             height={133}
-            className="size-8 rounded-lg"
+            // Black artwork on transparency: invert it so it reads on a dark background.
+            className="size-8 rounded-lg dark:invert"
             priority
           />
           <span className="hidden sm:inline">Govinda Timsina</span>
